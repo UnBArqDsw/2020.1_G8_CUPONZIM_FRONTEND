@@ -1,9 +1,10 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:flutter/widgets.dart';
+import 'package:Cuponzim/widgets/button.dart';
+import 'package:Cuponzim/widgets/cupom.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
   AnimationController controller;
   Animation<double> animation;
 
- /*  goTo() {
+  /*  goTo() {
     new Future.delayed(const Duration(seconds: 3),
         () =>  Navigator.pushNamedAndRemoveUntil(context, "/enter", (r) => false),);
   } */
@@ -58,7 +59,17 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                    
+                        Container(
+                          padding: EdgeInsets.all(40),
+                          child: Cupom(
+                            title: 'Combo Big Mac',
+                            startPrice: '32,00',
+                            finalPrice: '18,00',
+                            isFavorite: true,
+                            onPressed: () {},
+                          ),
+                        ),
+                        
                       ],
                     ),
                   ))

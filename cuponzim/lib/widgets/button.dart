@@ -13,18 +13,31 @@ class Button extends StatelessWidget {
     return Container(
       margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
       child: RaisedButton(
-        onPressed: onPressed,
-        elevation: 3,
-        child: Text(
-          title,
-          style: TextStyle(
-            fontFamily: Theme.of(context).textTheme.headline2.fontFamily,
-            fontSize: Theme.of(context).textTheme.headline2.fontSize,
-            fontWeight: FontWeight.w600,
-            color: lightColor,
+          onPressed: onPressed,
+          elevation: 3,
+          color: primaryColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
           ),
-        ),
-      ),
+          child: Padding(
+            padding: EdgeInsets.all(18),
+            child: Row(
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontFamily:
+                        Theme.of(context).textTheme.headline2.fontFamily,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: lightColor,
+                  ),
+                ),
+                Padding(padding: EdgeInsets.only(right: 5)),
+                Icon(Icons.arrow_forward, size: 30)
+              ],
+            ),
+          )),
     );
   }
 }
