@@ -22,31 +22,14 @@ Aplicativo de cupoms de desconto
 Adicione 3 ou mais screenshots do projeto em termos de interface e funcionamento.
 
 ## Instalação 
-**Linguagens**: TypeScript<br>
-**Tecnologias**: Node + Express <br>
+**Linguagens**: Dart
+**Tecnologias**: Flutter 1.22.0
 
 Para rodar o projeto é necessário usar os seguintes comandos
 
 ```console
-foo@bar:~$ docker-compose build
-```
- 
- O comando acima é executado apenas a primeira vez que o sistema é iniciado, após isso basta usar:
- 
- ```console
-foo@bar:~$ docker-compose up
-```
-
-## Uso 
-Para rodar os testes em ambiente de desenvolvimento use os comandos:
-
-```console
-foo@bar:~$ docker-compose run node bash
-```
-E após:
-
-```console
-foo@bar:~$ yarn test
+foo@bar:~$ flutter pub get
+foo@bar:~$ flutter run
 ```
 
 ## Vídeo
