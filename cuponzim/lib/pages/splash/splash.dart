@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:flutter/widgets.dart';
-import 'package:Cuponzim/widgets/button.dart';
-import 'package:Cuponzim/widgets/cupom.dart';
+import 'package:Cuponzim/theme/colors.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -48,7 +47,7 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
                 gradientBackground: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
-                  colors: [Color(0xffDD7230), Color(0xff854D27)],
+                  colors: [primaryColor, primaryColor],
                 ),
                 loaderColor: Colors.transparent,
               ),
@@ -59,17 +58,10 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Container(
-                          padding: EdgeInsets.all(40),
-                          child: Cupom(
-                            title: 'Combo Big Mac',
-                            startPrice: '32,00',
-                            finalPrice: '18,00',
-                            isFavorite: true,
-                            onPressed: () {},
-                          ),
+                        Image(
+                          image: AssetImage('lib/assets/logo2.png'),
+                          width: 250,
                         ),
-                        
                       ],
                     ),
                   ))
