@@ -17,46 +17,84 @@ class BaseScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final _screenSizeHeight = MediaQuery.of(context).size.height - 166;
 
+    Size displaySize(BuildContext context) {
+      return MediaQuery.of(context).size;
+    }
+
+    double displayHeight(BuildContext context) {
+      return displaySize(context).height;
+    }
+
+    double displayWidth(BuildContext context) {
+      return displaySize(context).width;
+    }
+
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        automaticallyImplyLeading: !dontBackButton,
-        iconTheme: IconThemeData(color: darkColor),
-        backgroundColor: Colors.white,
-      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
-            child: Column(
+            color: dangerColor,
+            padding: EdgeInsets.only(top: 30, bottom: 0),
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  topTitle,
-                  style: TextStyle(
-                    fontFamily:
-                        Theme.of(context).textTheme.headline1.fontFamily,
-                    fontSize: Theme.of(context).textTheme.headline1.fontSize,
-                    fontWeight:
-                        Theme.of(context).textTheme.headline1.fontWeight,
-                    color: Theme.of(context).textTheme.headline1.color,
-                  ),
+                Padding(
+                  padding: EdgeInsets.only(top: 0, left: 20),
+                  child: Container(
+                      width: displayWidth(context) * 0.13,
+                      height: displayHeight(context) * 0.08,
+                      child: AppBar(
+                        elevation: 0,
+                        automaticallyImplyLeading: !dontBackButton,
+                        iconTheme: IconThemeData(color: lightColor),
+                        backgroundColor: dangerColor,
+                      )),
                 ),
-                Text(
-                  bottomTitle,
-                  style: TextStyle(
-                    fontFamily:
-                        Theme.of(context).textTheme.headline1.fontFamily,
-                    fontSize: Theme.of(context).textTheme.headline1.fontSize,
-                    fontWeight:
-                        Theme.of(context).textTheme.headline1.fontWeight,
-                    color: Theme.of(context).textTheme.headline1.color,
-                  ),
-                ),
+                Padding(
+                    padding: EdgeInsets.only(top: 25, left: 50),
+                    child: Container(
+                      child: Text(
+                        topTitle,
+                        style: TextStyle(
+                          fontFamily:
+                              Theme.of(context).textTheme.headline1.fontFamily,
+                          fontSize:
+                              Theme.of(context).textTheme.headline3.fontSize,
+                          fontWeight:
+                              Theme.of(context).textTheme.subtitle1.fontWeight,
+                          color: Theme.of(context).textTheme.headline1.color,
+                        ),
+                      ),
+                    )),
               ],
             ),
           ),
+          Container(
+              child: Row(children: [
+            Padding(
+                padding: EdgeInsets.only(top: 0, left: 0),
+                child: Container(
+                  width: displayWidth(context),
+                  height: displayHeight(context)*0.1,
+                  color: dangerColor,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 15, left: 30),
+                    child: Text(
+                      bottomTitle,
+                      style: TextStyle(
+                        fontFamily:
+                            Theme.of(context).textTheme.headline1.fontFamily,
+                        fontSize:
+                            Theme.of(context).textTheme.headline6.fontSize,
+                        fontWeight:
+                            Theme.of(context).textTheme.headline1.fontWeight,
+                        color: Theme.of(context).textTheme.headline1.color,
+                      ),
+                    ),
+                  ),
+                ))
+          ])),
           Container(
             height: _screenSizeHeight,
             child: SingleChildScrollView(
