@@ -30,19 +30,18 @@ class BaseScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
         children: <Widget>[
           Container(
             color: dangerColor,
             padding: EdgeInsets.only(top: 30, bottom: 0),
-            child: Row(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(top: 0, left: 20),
                   child: Container(
-                      width: displayWidth(context) * 0.13,
+                      width: displayWidth(context),
                       height: displayHeight(context) * 0.08,
                       child: AppBar(
                         elevation: 0,
@@ -52,7 +51,7 @@ class BaseScreen extends StatelessWidget {
                       )),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(top: 25, left: 50),
+                    padding: EdgeInsets.only(top: 15, left: 40),
                     child: Container(
                       child: Text(
                         topTitle,
@@ -67,19 +66,13 @@ class BaseScreen extends StatelessWidget {
                         ),
                       ),
                     )),
-              ],
-            ),
-          ),
-          Container(
-              child: Row(children: [
-            Padding(
-                padding: EdgeInsets.only(top: 0, left: 0),
-                child: Container(
-                  width: displayWidth(context),
-                  height: displayHeight(context)*0.1,
-                  color: dangerColor,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 15, left: 30),
+                Container(
+                    child: Padding(
+                  padding: EdgeInsets.only(top: 10, left: 40),
+                  child: Container(
+                    width: displayWidth(context),
+                    height: displayHeight(context) * 0.05,
+                    color: dangerColor,
                     child: Text(
                       bottomTitle,
                       style: TextStyle(
@@ -93,18 +86,19 @@ class BaseScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                ))
-          ])),
+                )),
+              ],
+            ),
+          ),
           Container(
-            height: _screenSizeHeight,
-            child: SingleChildScrollView(
+            color: lightColor,
+            width: displayWidth(context),
+            height: displayHeight(context)*0.8,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                 child: Container(
-                  height: _screenSizeHeight - 20,
                   child: body,
                 ),
-              ),
             ),
           ),
         ],
