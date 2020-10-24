@@ -3,20 +3,15 @@ import 'package:flutter/material.dart';
 
 class BaseScreen extends StatelessWidget {
   final String topTitle;
-  final String bottomTitle;
-  final Widget body;
-  final bool dontBackButton;
 
-  BaseScreen(
-      {this.topTitle,
-      this.bottomTitle,
-      this.body,
-      this.dontBackButton = false});
+  final Widget body;
+  final Widget headerWidget;
+  final bool backButton;
+
+  BaseScreen({this.topTitle, this.body, this.headerWidget, this.backButton});
 
   @override
   Widget build(BuildContext context) {
-    final _screenSizeHeight = MediaQuery.of(context).size.height - 166;
-
     Size displaySize(BuildContext context) {
       return MediaQuery.of(context).size;
     }
@@ -30,78 +25,62 @@ class BaseScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          Container(
-            color: dangerColor,
-            padding: EdgeInsets.only(top: 30, bottom: 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(top: 0, left: 20),
-                  child: Container(
-                      width: displayWidth(context),
-                      height: displayHeight(context) * 0.08,
-                      child: AppBar(
-                        elevation: 0,
-                        automaticallyImplyLeading: !dontBackButton,
-                        iconTheme: IconThemeData(color: lightColor),
-                        backgroundColor: dangerColor,
-                      )),
+      backgroundColor: lightColor,
+      body: Container(
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                height: displayHeight(context) / 3,
+                width: displayWidth(context),
+                decoration: BoxDecoration(
+                  color: dangerColor,
                 ),
-                Padding(
-                    padding: EdgeInsets.only(top: 15, left: 40),
-                    child: Container(
-                      child: Text(
-                        topTitle,
-                        style: TextStyle(
-                          fontFamily:
-                              Theme.of(context).textTheme.headline1.fontFamily,
-                          fontSize:
-                              Theme.of(context).textTheme.headline3.fontSize,
-                          fontWeight:
-                              Theme.of(context).textTheme.subtitle1.fontWeight,
-                          color: Theme.of(context).textTheme.headline1.color,
+                child: Container(
+                  padding: EdgeInsets.only(
+                      top: displayHeight(context) / 12, left: 30, right: 30),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      backButton
+                          ? GestureDetector(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Icon(
+                                Icons.arrow_back,
+                                color: lightColor,
+                                size: 32,
+                              ))
+                          : SizedBox.shrink(),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20, bottom: 20),
+                        child: Text(
+                          topTitle,
+                          style: TextStyle(
+                            fontFamily: Theme.of(context)
+                                .textTheme
+                                .headline2
+                                .fontFamily,
+                            fontSize: 32,
+                            fontWeight: FontWeight.w500,
+                            color: lightColor,
+                          ),
                         ),
                       ),
-                    )),
-                Container(
-                    child: Padding(
-                  padding: EdgeInsets.only(top: 10, left: 40),
-                  child: Container(
-                    width: displayWidth(context),
-                    height: displayHeight(context) * 0.05,
-                    color: dangerColor,
-                    child: Text(
-                      bottomTitle,
-                      style: TextStyle(
-                        fontFamily:
-                            Theme.of(context).textTheme.headline1.fontFamily,
-                        fontSize:
-                            Theme.of(context).textTheme.headline6.fontSize,
-                        fontWeight:
-                            Theme.of(context).textTheme.headline1.fontWeight,
-                        color: Theme.of(context).textTheme.headline1.color,
-                      ),
-                    ),
+                      headerWidget,
+                    ],
                   ),
-                )),
-              ],
-            ),
-          ),
-          Container(
-            color: lightColor,
-            width: displayWidth(context),
-            height: displayHeight(context)*0.8,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                child: Container(
-                  child: body,
                 ),
-            ),
-          ),
-        ],
+              ),
+              Expanded(
+                  child: ListView(children: [
+                Container(
+                    padding: EdgeInsets.only(left: 10, right: 10), child: body)
+              ])),
+            ]),
       ),
     );
   }
