@@ -1,3 +1,4 @@
+import 'package:Cuponzim/routes/app_routes.dart';
 import 'package:Cuponzim/widgets/base_screen.dart';
 import 'package:Cuponzim/widgets/cupom.dart';
 import 'package:flutter/cupertino.dart';
@@ -135,24 +136,64 @@ class _HomeState extends State<Home> {
                                     padding: EdgeInsets.only(
                                         top: displayHeight(context) / 8),
                                   ),
-                                  Text('Lojas',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 26)),
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        isMenuClosed = !isMenuClosed;
+                                      });
+                                    },
+                                    child: Text('Lojas',
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 26)),
+                                  ),
                                   Padding(
                                     padding: EdgeInsets.only(top: 10),
                                   ),
-                                  Text('Promoçoes',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 26)),
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        isMenuClosed = !isMenuClosed;
+                                      });
+                                    },
+                                    child: Text('Promoções',
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 26)),
+                                  ),
                                   Padding(
                                     padding: EdgeInsets.only(top: 10),
                                   ),
-                                  Text('Configuraçoes',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 26))
+                                    GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        isMenuClosed = !isMenuClosed;
+                                      });
+                                    },
+                                    child: Text('Fale Conosco',
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 26)),
+                                  ),
+                                   Padding(
+                                    padding: EdgeInsets.only(top: 10),
+                                  ),
+                                  GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          isMenuClosed = !isMenuClosed;
+                                        });
+                                        new Future.delayed(
+                                            const Duration(milliseconds: 300),
+                                            () => Navigator.of(context)
+                                                .pushNamed(
+                                                    AppRoutes.SETTINGS_PAGE));
+                                      },
+                                      child: Text('Configurações',
+                                          textAlign: TextAlign.left,
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 26))),
                                 ],
                               ),
                             ),
