@@ -11,7 +11,7 @@ class MainTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(photo), fit: BoxFit.cover),
+        image: DecorationImage(image: AssetImage(photo), fit: BoxFit.contain),
         borderRadius: BorderRadius.circular(10),
       ),
       height: 230,
