@@ -7,8 +7,9 @@ class BaseScreen extends StatelessWidget {
   final Widget body;
   final Widget headerWidget;
   final bool backButton;
+  final Function menu;
 
-  BaseScreen({this.topTitle, this.body, this.headerWidget, this.backButton});
+  BaseScreen({this.topTitle, this.body, this.headerWidget, this.backButton, this.menu});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +55,12 @@ class BaseScreen extends StatelessWidget {
                                 color: lightColor,
                                 size: 32,
                               ))
-                          : SizedBox.shrink(),
+                          : GestureDetector(
+                              onTap: menu,
+                              child: Image(
+                          image: AssetImage('lib/assets/hamb.png'),
+                          width: 20,
+                        ),),
                       Padding(
                         padding: EdgeInsets.only(top: 20, bottom: 20),
                         child: Text(
