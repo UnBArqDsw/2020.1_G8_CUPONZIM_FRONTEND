@@ -14,14 +14,14 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
   AnimationController controller;
   Animation<double> animation;
 
-  /*  goTo() {
+    goTo() {
     new Future.delayed(const Duration(seconds: 3),
-        () =>  Navigator.pushNamedAndRemoveUntil(context, "/enter", (r) => false),);
-  } */
+        () =>  Navigator.pushNamedAndRemoveUntil(context, "/home", (r) => false),);
+  } 
 
   initState() {
     super.initState();
-    /* goTo(); */
+    goTo();
     controller = AnimationController(
         duration: const Duration(milliseconds: 1000), vsync: this);
     animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
@@ -31,6 +31,7 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    
     return Scaffold(
       body: Theme(
           data: new ThemeData(
