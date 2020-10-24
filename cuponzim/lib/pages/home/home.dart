@@ -141,6 +141,11 @@ class _HomeState extends State<Home> {
                                       setState(() {
                                         isMenuClosed = !isMenuClosed;
                                       });
+                                        new Future.delayed(
+                                            const Duration(milliseconds: 300),
+                                            () => Navigator.of(context)
+                                                .pushNamed(
+                                                    AppRoutes.FAVORITE_PAGE));
                                     },
                                     child: Text('Lojas',
                                         textAlign: TextAlign.left,
@@ -169,6 +174,11 @@ class _HomeState extends State<Home> {
                                       setState(() {
                                         isMenuClosed = !isMenuClosed;
                                       });
+                                        new Future.delayed(
+                                            const Duration(milliseconds: 300),
+                                            () => Navigator.of(context)
+                                                .pushNamed(
+                                                    AppRoutes.TALK_PAGE));
                                     },
                                     child: Text('Fale Conosco',
                                         textAlign: TextAlign.left,

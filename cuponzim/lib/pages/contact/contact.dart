@@ -53,8 +53,8 @@ class _ContactState extends State<Contact> with TickerProviderStateMixin {
             children: <Widget>[
               BaseScreen(
                 topTitle: "Fale conosco",
-                bottomTitle:
-                    "Alguma dúvida, reclamação ou sugestão de melhoria ? Mande mensagem para nossa equipe",
+                headerWidget: Text(
+                    "Alguma dúvida, reclamação ou sugestão de melhoria ? Mande mensagem para nossa equipe"),
                 body: Column(children: <Widget>[
                   Padding(
                       padding: const EdgeInsets.fromLTRB(30, 100, 30, 20),
@@ -80,15 +80,39 @@ class _ContactState extends State<Contact> with TickerProviderStateMixin {
                               ),
                             ),
                           ))),
-                         Container(
-                          width: displayWidth(context) * 0.5,
-                          height: displayHeight(context) * 0.1,
-                           color: primaryColor,
-                           child: 
-                           Button(onPressed: null, title: "Enviar",),
-                         )     
+                  Container(
+                    width: 160,
+                    child: RaisedButton(
+                        onPressed: () {},
+                        elevation: 3,
+                        color: primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(18),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Enviar',
+                                style: TextStyle(
+                                  fontFamily: Theme.of(context)
+                                      .textTheme
+                                      .headline2
+                                      .fontFamily,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: lightColor,
+                                ),
+                              ),
+                              Padding(padding: EdgeInsets.only(right: 5)),
+                              Icon(Icons.arrow_forward, size: 30)
+                            ],
+                          ),
+                        )),
+                  )
                 ]),
-                dontBackButton: false,
+                backButton: true,
               ),
             ],
           )),

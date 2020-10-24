@@ -11,11 +11,12 @@ class Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        color: Colors.red,
       margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
       child: RaisedButton(
           onPressed: onPressed,
           elevation: 3,
-          color: primaryColor,
+          color: Colors.red,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),

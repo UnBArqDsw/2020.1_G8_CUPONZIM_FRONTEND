@@ -28,15 +28,14 @@ class _FavoriteState extends State<Favorite> {
             Brightness.light // Dark == white status bar -- for IOS.
         ));
 
-    Container dropdown = Container(
-      padding: EdgeInsets.all(20.0),
+Container dropdown = Container(
       child: DropdownButtonHideUnderline(
           child: DropdownButton(
               dropdownColor: Colors.white,
               value: _value,
               items: [
                 DropdownMenuItem(
-                  child: Text("First Item",
+                  child: Text("Park Shopping",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -45,7 +44,7 @@ class _FavoriteState extends State<Favorite> {
                   value: 1,
                 ),
                 DropdownMenuItem(
-                  child: Text("Second Item",
+                  child: Text("Águas Claras Shopping",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -54,7 +53,7 @@ class _FavoriteState extends State<Favorite> {
                   value: 2,
                 ),
                 DropdownMenuItem(
-                    child: Text("Third Item",
+                    child: Text("Taguatinga Shopping",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
@@ -62,7 +61,7 @@ class _FavoriteState extends State<Favorite> {
                         )),
                     value: 3),
                 DropdownMenuItem(
-                    child: Text("Fourth Item",
+                    child: Text("Outlet Premium",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
@@ -76,6 +75,7 @@ class _FavoriteState extends State<Favorite> {
                 });
               })),
     );
+
 
     return Scaffold(
       body: Theme(
