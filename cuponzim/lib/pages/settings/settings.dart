@@ -55,8 +55,8 @@ class _SettingsState extends State<Settings> {
             width: 120,
           ),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             children: [
               Icon(Icons.gps_fixed, color: dangerColor),
@@ -67,15 +67,15 @@ class _SettingsState extends State<Settings> {
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   )),
-              Padding(padding: EdgeInsets.only(right: 100)),
+              Padding(padding: EdgeInsets.only(right: 135)),
               Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
             ],
           ),
           new Divider(),
           Padding(padding: EdgeInsets.only(top: 10)),
             Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             children: [
               Icon(Icons.star, color: dangerColor),
@@ -86,15 +86,15 @@ class _SettingsState extends State<Settings> {
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   )),
-              Padding(padding: EdgeInsets.only(right: 100)),
+              Padding(padding: EdgeInsets.only(right: 105)),
               Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
             ],
           ),
            new Divider(),
           Padding(padding: EdgeInsets.only(top: 10)),
             Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             children: [
               Icon(Icons.message, color: dangerColor),
@@ -105,15 +105,16 @@ class _SettingsState extends State<Settings> {
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   )),
-              Padding(padding: EdgeInsets.only(right: 100)),
+              Padding(padding: EdgeInsets.only(right: 120)),
+              
               Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
             ],
           ),
            new Divider(),
           Padding(padding: EdgeInsets.only(top: 10)),
             Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             children: [
               Icon(Icons.close, color: dangerColor),
@@ -124,11 +125,10 @@ class _SettingsState extends State<Settings> {
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   )),
-              Padding(padding: EdgeInsets.only(right: 100)),
+              Padding(padding: EdgeInsets.only(right: 215)),
               Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 16),
             ],
           ),
-          
           
           
           new Divider(),
