@@ -1,5 +1,5 @@
-
 import 'package:Cuponzim/pages/contact/contact.dart';
+import 'package:Cuponzim/pages/details/details.dart';
 import 'package:Cuponzim/pages/favorite/favorite_store.dart';
 import 'package:Cuponzim/pages/home/home.dart';
 import 'package:Cuponzim/pages/settings/settings.dart';
@@ -12,8 +12,9 @@ class Routes {
   static Map<String, Widget Function(BuildContext)> routes = {
     AppRoutes.SPLASH_PAGE: (tcx) => Splash(),
     AppRoutes.HOME_PAGE: (tcx) => Home(),
-     AppRoutes.SETTINGS_PAGE: (tcx) => Settings(),
-     AppRoutes.TALK_PAGE: (tcx) => Contact(),
-     AppRoutes.FAVORITE_PAGE: (tcx) => Favorite()
+    AppRoutes.SETTINGS_PAGE: (tcx) => Settings(),
+    AppRoutes.TALK_PAGE: (tcx) => Contact(),
+    AppRoutes.FAVORITE_PAGE: (tcx) => Favorite(),
+    AppRoutes.DETAILS_PAGE: (tcx) => Details()
   };
 }

@@ -251,7 +251,9 @@ class _HomeState extends State<Home> {
                       finalPrice: '18,00',
                       isFavorite: true,
                       photo: 'lib/assets/mc.png',
-                      onPressed: () {}),
+                      onPressed: () {Navigator.of(context)
+                                                .pushNamed(
+                                                    AppRoutes.DETAILS_PAGE);}),
                 ),
                 Padding(
                   padding: EdgeInsets.all(10),

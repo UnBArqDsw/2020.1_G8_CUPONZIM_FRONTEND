@@ -6,4 +6,5 @@ class AppRoutes {
   static const SETTINGS_PAGE = 'settings';
   static const TALK_PAGE = '/talk';
   static const FAVORITE_PAGE = '/favorite';
+  static const DETAILS_PAGE = '/details';
 }
