@@ -104,7 +104,7 @@ class Cupom extends StatelessWidget {
                     ],
                   )),
               Padding(
-                  padding: EdgeInsets.all(1),
+                  padding: EdgeInsets.only(bottom: 12),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
