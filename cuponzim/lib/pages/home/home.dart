@@ -29,14 +29,13 @@ class _HomeState extends State<Home> {
         ));
 
     Container dropdown = Container(
-      padding: EdgeInsets.all(20.0),
       child: DropdownButtonHideUnderline(
           child: DropdownButton(
               dropdownColor: Colors.white,
               value: _value,
               items: [
                 DropdownMenuItem(
-                  child: Text("First Item",
+                  child: Text("Park Shopping",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -45,7 +44,7 @@ class _HomeState extends State<Home> {
                   value: 1,
                 ),
                 DropdownMenuItem(
-                  child: Text("Second Item",
+                  child: Text("Águas Claras Shopping",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -54,7 +53,7 @@ class _HomeState extends State<Home> {
                   value: 2,
                 ),
                 DropdownMenuItem(
-                    child: Text("Third Item",
+                    child: Text("Taguatinga Shopping",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
@@ -62,7 +61,7 @@ class _HomeState extends State<Home> {
                         )),
                     value: 3),
                 DropdownMenuItem(
-                    child: Text("Fourth Item",
+                    child: Text("Outlet Premium",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
@@ -94,27 +93,36 @@ class _HomeState extends State<Home> {
                 headerWidget: dropdown,
                 body: Column(
                   children: [
-                    Cupom(
-                        title: 'Combo Big Mac',
-                        startPrice: '32,00',
-                        finalPrice: '18,00',
-                        isFavorite: true,
-                        photo: 'lib/assets/mc.png',
-                        onPressed: () {}),
-                    Cupom(
-                        title: 'Combo Big Mac',
-                        startPrice: '32,00',
-                        finalPrice: '18,00',
-                        isFavorite: true,
-                        photo: 'lib/assets/mc.png',
-                        onPressed: () {}),
-                    Cupom(
-                        title: 'Combo Big Mac',
-                        startPrice: '32,00',
-                        finalPrice: '18,00',
-                        isFavorite: true,
-                        photo: 'lib/assets/mc.png',
-                        onPressed: () {}),
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Cupom(
+                          title: 'Combo Big Mac',
+                          startPrice: '32,00',
+                          finalPrice: '18,00',
+                          isFavorite: true,
+                          photo: 'lib/assets/mc.png',
+                          onPressed: () {}),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Cupom(
+                          title: 'Pizza média',
+                          startPrice: '30,00',
+                          finalPrice: '12,00',
+                          isFavorite: false,
+                          photo: 'lib/assets/pizza.png',
+                          onPressed: () {}),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Cupom(
+                          title: 'Iphone XS',
+                          startPrice: '500,00',
+                          finalPrice: '499,00',
+                          isFavorite: true,
+                          photo: 'lib/assets/phone.jpg',
+                          onPressed: () {}),
+                    ),
                   ],
                 ),
               ),
