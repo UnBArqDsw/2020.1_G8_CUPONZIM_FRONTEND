@@ -6,4 +6,5 @@ class AppRoutes {
   static const FAVORITE_PAGE = '/favorite';
   static const DETAILS_PAGE = '/details';
   static const REGISTER_PAGE = '/register';
+  static const LOGIN_PAGE = '/login';
 }

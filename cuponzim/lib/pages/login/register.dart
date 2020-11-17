@@ -1,3 +1,4 @@
+import 'package:Cuponzim/routes/app_routes.dart';
 import 'package:Cuponzim/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -123,7 +124,6 @@ class _RegisterState extends State<Register> {
             Uri.encodeFull(DotEnv().env['HTTP_ENDPOINT'] + "auth/users/"),
             body: {
               "username": nomeController.text,
-              "email": emailController.text,
               "password": passwordController.text,
             });
         var jsonData = response.body;
@@ -195,8 +195,8 @@ class _RegisterState extends State<Register> {
                         ),
                         GestureDetector(
                             onTap: () {
-                              /*    Navigator.of(context)
-                                  .pushNamed(AppRoutes.LOGIN_PAGE); */
+                              Navigator.of(context)
+                                  .pushNamed(AppRoutes.LOGIN_PAGE);
                             },
                             child: Center(
                               child: finaltext,
