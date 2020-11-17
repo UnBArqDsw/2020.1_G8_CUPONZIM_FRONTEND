@@ -14,7 +14,7 @@ class CuponzimApp extends StatelessWidget {
         title: 'Cuponzim',
         theme: CuponzimTheme,
         debugShowCheckedModeBanner: false,
-        initialRoute: '/splash',
+        initialRoute: '/register',
         onGenerateRoute: (settings) {
           return CupertinoPageRoute(
             builder: (context) => Routes.routes[settings.name](context),
